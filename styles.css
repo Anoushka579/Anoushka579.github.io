@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.hero-banner {
+    background-image: url('LitFest Hero Banner.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 200px 0;
+    color: #800000;
+}
+
+.about-us, .spotlight-events, .testimonials {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.schedule {
+    background-color: #f2f2f2;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Additional custom styles */
+.schedule ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left; /* Align text to the left */
+}
