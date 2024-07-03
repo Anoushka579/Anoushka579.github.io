@@ -4,54 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Literature Festival Chatbot</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        /* Add any additional styles here if needed */
-        .chat-container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .chat-box {
-            height: 300px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .user-input {
-            width: calc(100% - 75px);
-            padding: 8px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-        .send-button {
-            padding: 8px 15px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .send-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="chat-container">
         <div id="chat-box" class="chat-box"></div>
         <input type="text" id="user-input" class="user-input" placeholder="Type a message...">
-        <button onclick="sendMessage()" class="send-button">Send</button>
+        <button id="user-click" onclick="sendMessage()" class="send-button">Send</button>
     </div>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
