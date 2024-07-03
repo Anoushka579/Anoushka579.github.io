@@ -2,16 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Global variables
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
-
+    const userClick = document.getElementById('user-click');
     // Event listener for user input
-    userInput.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
+    userClick.addEventListener('click', function (event) {
             sendMessage();
-        }
     });
 
     // Function to send user message and receive bot response
     function sendMessage() {
+       console.log('test')
         const message = userInput.value.trim();
         if (message !== '') {
             appendMessage('user', message);
