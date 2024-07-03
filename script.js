@@ -3,14 +3,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
     const userClick = document.getElementById('user-click');
-    // Event listener for user input
+
+    // Check if essential elements are present
+    if (!chatBox || !userInput || !userClick) {
+        console.error('One or more required elements not found.');
+        return;
+    }
+
+    // Event listener for user click on send button
     userClick.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission
+        sendMessage();
+    });
+
+    // Event listener for Enter key press in input field
+    userInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission
             sendMessage();
+        }
     });
 
     // Function to send user message and receive bot response
     function sendMessage() {
-       console.log('test')
         const message = userInput.value.trim();
         if (message !== '') {
             appendMessage('user', message);
@@ -21,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const reply = generateBotResponse(message);
                 appendMessage('bot', reply);
             }, 500);
+        } else {
+            console.log('Empty message');
         }
     }
 
@@ -37,14 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to generate bot response based on user message
     function generateBotResponse(message) {
-        // Lowercase message for case-insensitive comparison
         const lowerMessage = message.toLowerCase();
 
         // Responses based on keywords or patterns
         if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
             return "Hello! Welcome to the KED LitFest chatbot. How may I help you?";
         } else if (lowerMessage.includes('timings') || lowerMessage.includes('schedule')) {
-            return "The event timings are from 9 am to 5 pm. The detailed event schedule can be found on the Events page, as well as, the Home Page.";
+            return "The event timings are from 9 am to 5 pm. The detailed event schedule can be found on the Events page, as well as the Home Page.";
         } else if (lowerMessage.includes('events') || lowerMessage.includes('suitable events')) {
             return "Based on your interests, I recommend attending any of our interactive sessions, as well as, LitFest After Hours. Check our schedule for more details.";
         } else if (lowerMessage.includes('registration') || lowerMessage.includes('register')) {
